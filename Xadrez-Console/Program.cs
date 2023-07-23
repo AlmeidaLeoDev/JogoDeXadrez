@@ -2,7 +2,7 @@
 using tabuleiro;
 using xadrez;
 
-namespace Xadrez_Console
+namespace xadrez_console  
 {
     class Program
     {
@@ -10,20 +10,35 @@ namespace Xadrez_Console
         {
             try
             {
-                Tabuleiro tab = new Tabuleiro(8, 8);
+                PartidaDeXadrez partida = new PartidaDeXadrez();
 
-                tab.colocarPeca(new Torre(tab, Cor.Preto), new Posicao(0, 0)); //colocar torre na posição 0,0
-                tab.colocarPeca(new Torre(tab, Cor.Preto), new Posicao(1, 3)); //colocar torre na posição 1,3
-                tab.colocarPeca(new Rei(tab, Cor.Preto), new Posicao(2, 4)); //colocar rei na posição 2,4
+                while (!partida.terminada)
+                {
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab);
 
-                Tela.imprimirTabuleiro(tab);
+                    Console.WriteLine();
+                    Console.Write("Origem: ");
+                    //esse método vai ler do teclado a posição do xadrez e transformar em posição de matriz
+                    Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
 
-                Console.ReadLine();
+                    bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
+
+                    Console.WriteLine();
+                    Console.WriteLine("Destino: ");
+                    Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
+
+                    partida.executaMovimento(origem, destino);  
+                }
             }
             catch(TabuleiroException e)
             {
                 Console.WriteLine(e.Message);
             }
+            Console.ReadLine();
         }
     }
 }

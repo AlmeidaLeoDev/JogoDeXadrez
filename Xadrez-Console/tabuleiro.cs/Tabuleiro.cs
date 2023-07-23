@@ -2,7 +2,7 @@
 
 namespace tabuleiro
 {
-    internal class Tabuleiro
+    class Tabuleiro
     {
         public int linhas { get; set; }
         public int colunas { get; set; }
@@ -45,7 +45,8 @@ namespace tabuleiro
             pecas[pos.linha, pos.coluna] = p;
             p.posicao = pos; //A posição da peça agora será pós
         }
-        //Método para retirar peça
+
+        //Método para retirar peça do tabuleiro
         public Peca retirarPeca(Posicao pos)
         {
             //tira pra fora, marca a posição como nula e retorna a peça
