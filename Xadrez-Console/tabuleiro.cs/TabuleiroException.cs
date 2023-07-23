@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Xadrez_Console.tabuleiro.cs
+﻿namespace tabuleiro
 {
-    internal class TabuleiroException
+    //O exception é herdado do próprio C#
+    internal class TabuleiroException : Exception
     {
+        public TabuleiroException(string msg) : base(msg)
+        {
+        }
     }
 }
