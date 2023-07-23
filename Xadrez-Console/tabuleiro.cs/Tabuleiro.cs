@@ -45,6 +45,19 @@ namespace tabuleiro
             pecas[pos.linha, pos.coluna] = p;
             p.posicao = pos; //A posição da peça agora será pós
         }
+        //Método para retirar peça
+        public Peca retirarPeca(Posicao pos)
+        {
+            //tira pra fora, marca a posição como nula e retorna a peça
+            if (peca(pos) == null)
+            {
+                return null;
+            }
+            Peca aux = peca(pos); //aux = auxiliar
+            aux.posicao = null;
+            pecas[pos.linha, pos.coluna] = null;
+            return aux;
+        }
 
         //Método para testar se uma posição é valida
         public bool posicaoValida(Posicao pos)
