@@ -69,7 +69,7 @@ namespace xadrez
             {
                 xeque = false;
             }
-            if (testeXequemate(adversaria(jogadorAtual)){
+            if (testeXequemate(adversaria(jogadorAtual))){
                 terminada = true;
             }
             else
@@ -98,7 +98,7 @@ namespace xadrez
 
         public void validarPosicaoDeDestino(Posicao origem, Posicao destino)
         {
-            if (!tab.peca(origem).podeMoverPara(destino))//Se a peça de origem não pode mover para a posição de destino
+            if (!tab.peca(origem).movimentoPossivel(destino))//Se a peça de origem não pode mover para a posição de destino
             {
                 throw new TabuleiroException("Posição de destino inválida!");
             }

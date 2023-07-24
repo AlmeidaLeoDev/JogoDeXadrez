@@ -42,7 +42,7 @@
             return false; //Se percorrer todo o método e não achar movimentos possíveis
         }
 
-        public bool podeMoverPara(Posicao pos)
+        public bool movimentoPossivel(Posicao pos)
         {
             return movimentosPossiveis()[pos.linha, pos.coluna];
         }
