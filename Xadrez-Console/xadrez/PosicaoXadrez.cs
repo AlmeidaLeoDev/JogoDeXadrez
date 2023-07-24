@@ -13,7 +13,6 @@ namespace xadrez
             this.linha = linha;
         }
 
-        //Converter a posição do xadrez (a1, b2, c6...) para posição interna da matriz
         public Posicao toPosicao()
         {
             return new Posicao(8 - linha, coluna - 'a');

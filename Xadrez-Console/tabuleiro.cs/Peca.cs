@@ -25,7 +25,6 @@
             qteMovimentos--;
         }
 
-        //Testar se a peça não está bloqueada de movimentos
         public bool existeMovimentosPossiveis()
         {
             bool[,] mat = movimentosPossiveis();
@@ -33,13 +32,13 @@
             {
                 for (int j = 0; j < tab.colunas; j++)
                 {
-                    if (mat[i,j] == true) //se existe pelo menos um movimento possível retorna true
+                    if (mat[i,j] == true)
                     {
                         return true;
                     }
                 }
             }
-            return false; //Se percorrer todo o método e não achar movimentos possíveis
+            return false;
         }
 
         public bool movimentoPossivel(Posicao pos)

@@ -24,11 +24,10 @@ namespace xadrez_console
                         Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
                         partida.validarPosicaoDeOrigem(origem);
 
-                        //A partir da posição de origem vou pegar quais são os movimentos possiveis
                         bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
 
                         Console.Clear();
-                        Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis); //Na hora de imprimir o tabuleiro será passado a matriz acima como argumento
+                        Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis); 
 
                         Console.WriteLine();
                         Console.WriteLine("Destino: ");

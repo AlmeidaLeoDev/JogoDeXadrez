@@ -37,9 +37,9 @@ namespace xadrez_console
             Console.WriteLine();
             Console.WriteLine("Pretas: ");
             ConsoleColor aux = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.Yellow; //Para imprimir no padrão amarelo
+            Console.ForegroundColor = ConsoleColor.Yellow; 
             imprimirConjunto(partida.pecasCapturadas(Cor.Preta));
-            Console.ForegroundColor = aux; //para voltar para a cor padrão
+            Console.ForegroundColor = aux; 
             Console.WriteLine();
         }
 
@@ -67,21 +67,20 @@ namespace xadrez_console
             Console.WriteLine("  a b c d e f g h");
         }
 
-        //Sobrecarga coma implementaçao de "posicoesPossiveis"
         public static void imprimirTabuleiro(Tabuleiro tab, bool[,] posicoesPossiveis)
         {
 
-            ConsoleColor fundoOriginal = Console.BackgroundColor; //pegar cor de fundo
-            ConsoleColor fundoAlterado = ConsoleColor.DarkGray; //essa cor quando a posição estiver marcada
+            ConsoleColor fundoOriginal = Console.BackgroundColor; 
+            ConsoleColor fundoAlterado = ConsoleColor.DarkGray; 
 
             for (int i = 0; i < tab.linhas; i++)
             {
                 Console.Write(8 - i + " ");
                 for (int j = 0; j < tab.colunas; j++)
                 {
-                    if (posicoesPossiveis[i, j]) //se a posição for posição
+                    if (posicoesPossiveis[i, j]) 
                     {
-                        Console.BackgroundColor = fundoAlterado; //Quando for posição possível de movimento, o fundo irá mudar
+                        Console.BackgroundColor = fundoAlterado; 
                     }
                     else
                     {

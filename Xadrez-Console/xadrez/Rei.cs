@@ -23,7 +23,7 @@ namespace xadrez
             return p == null || p.cor != cor;
         }
 
-        private bool testeTorreParaRoque(Posicao pos) //testa se a torre é elegível para roque
+        private bool testeTorreParaRoque(Posicao pos) 
         {
             Peca p = tab.peca(pos);
             return p != null && p is Torre && p.cor == cor && p.qteMovimentos == 0;
